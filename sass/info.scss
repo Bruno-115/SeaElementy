@@ -1,0 +1,236 @@
+@import './header';
+.Container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr);
+    grid-template-rows: repeat( 12, 1fr);
+    &__Box{
+        grid-column: 4 / 10;
+        grid-row: 3 / 10;
+        background-color: #fff;
+        border-radius: 2rem;
+        border: 1.5px solid black;
+        overflow: hidden;
+        &--Btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            padding-left: 4rem;
+            border-right: 2px dotted black;
+            background-color: transparent;
+            &--Config{
+                height: 6rem;
+                width: 6rem;
+                border-radius: 50%;
+                border: 2px solid black;
+                cursor: pointer;
+            }
+            &-Img{
+                height: 3rem;
+                margin-top: .5rem;
+            }
+            &-Sea{
+                background-image: linear-gradient(to right bottom,#4286f4 50% ,#3498db 50%);
+            }
+            &-Amz{
+                background-image: linear-gradient(to right bottom,#0f9b0f 50% ,#76b852 50%);
+            }
+            &-Sno{
+                background-image: linear-gradient(to right bottom,#FFFFFF 50% ,#6DD5FA 50%);
+            }
+        }
+        &--Content{
+            position: relative;
+            top: -100%;
+            height: 100%;
+            margin-left: 13.5rem;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            border-left: 2px dotted black;
+            &-Amz{
+                background-image: url(./../../img/Amz.jpg);
+                background-position: start;
+                background-size:contain;
+            }
+            &-Sno{
+                background-image: url(./../../img/Sno-Front.jpg);
+                background-position: start;
+                background-size:contain;
+                background-repeat: no-repeat;
+                @media screen and (max-width:$mb-1100) {
+                    background-size: cover;
+                    background-position-y: -10rem;
+                    background-position-x: -30rem;
+                  }
+            }
+            &-Sea{
+                background-image: url(./../../img/Sea-Front.jpg);
+                background-position: bottom;
+                background-position-y: -1800rem;
+                background-size:contain;
+                @media screen and (max-width:$mb-1140) {
+                    background-size: cover;
+                    background-position-y: -134rem;
+                  }
+            }
+        }
+    }
+}
+
+
+.Wave{
+    animation: wave 8s ease-in-out infinite;
+    height: 15rem;
+    width: 100%;
+    position: relative;
+    transform: translateY(70%);
+    &__Amz{
+        background-color: #2AAA8A;
+    }
+    &__Sno{
+        background-color: #DBF1FD; 
+    }
+    &__Sea{
+        background-color: #20b1b4; 
+    }
+  }
+
+@keyframes wave {
+    0%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 59.85%, 2.00% 59.55%, 4.00% 59.11%, 6.00% 58.52%, 8.00% 57.79%, 10.00% 56.95%, 12.00% 55.99%, 14.00% 54.94%, 16.00% 53.81%, 18.00% 52.62%, 20.00% 51.39%, 22.00% 50.14%, 24.00% 48.89%, 26.00% 47.65%, 28.00% 46.45%, 30.00% 45.31%, 32.00% 44.24%, 34.00% 43.26%, 36.00% 42.38%, 38.00% 41.63%, 40.00% 41.01%, 42.00% 40.53%, 44.00% 40.20%, 46.00% 40.03%, 48.00% 40.01%, 50.00% 40.15%, 52.00% 40.45%, 54.00% 40.89%, 56.00% 41.48%, 58.00% 42.21%, 60.00% 43.05%, 62.00% 44.01%, 64.00% 45.06%, 66.00% 46.19%, 68.00% 47.38%, 70.00% 48.61%, 72.00% 49.86%, 74.00% 51.11%, 76.00% 52.35%, 78.00% 53.55%, 80.00% 54.69%, 82.00% 55.76%, 84.00% 56.74%, 86.00% 57.62%, 88.00% 58.37%, 90.00% 58.99%, 92.00% 59.47%, 94.00% 59.80%, 96.00% 59.97%, 98.00% 59.99%, 100.00% 59.85%);}  
+    20%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 56.43%, 2.00% 55.42%, 4.00% 54.32%, 6.00% 53.16%, 8.00% 51.94%, 10.00% 50.70%, 12.00% 49.44%, 14.00% 48.19%, 16.00% 46.98%, 18.00% 45.81%, 20.00% 44.70%, 22.00% 43.68%, 24.00% 42.76%, 26.00% 41.95%, 28.00% 41.27%, 30.00% 40.73%, 32.00% 40.33%, 34.00% 40.09%, 36.00% 40.00%, 38.00% 40.07%, 40.00% 40.30%, 42.00% 40.68%, 44.00% 41.20%, 46.00% 41.87%, 48.00% 42.66%, 50.00% 43.57%, 52.00% 44.58%, 54.00% 45.68%, 56.00% 46.84%, 58.00% 48.06%, 60.00% 49.30%, 62.00% 50.56%, 64.00% 51.81%, 66.00% 53.02%, 68.00% 54.19%, 70.00% 55.30%, 72.00% 56.32%, 74.00% 57.24%, 76.00% 58.05%, 78.00% 58.73%, 80.00% 59.27%, 82.00% 59.67%, 84.00% 59.91%, 86.00% 60.00%, 88.00% 59.93%, 90.00% 59.70%, 92.00% 59.32%, 94.00% 58.80%, 96.00% 58.13%, 98.00% 57.34%, 100.00% 56.43%);  }
+    40%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 48.26%, 2.00% 47.04%, 4.00% 45.87%, 6.00% 44.76%, 8.00% 43.73%, 10.00% 42.81%, 12.00% 41.99%, 14.00% 41.31%, 16.00% 40.75%, 18.00% 40.35%, 20.00% 40.10%, 22.00% 40.00%, 24.00% 40.06%, 26.00% 40.28%, 28.00% 40.65%, 30.00% 41.17%, 32.00% 41.83%, 34.00% 42.62%, 36.00% 43.52%, 38.00% 44.52%, 40.00% 45.62%, 42.00% 46.78%, 44.00% 47.99%, 46.00% 49.23%, 48.00% 50.49%, 50.00% 51.74%, 52.00% 52.96%, 54.00% 54.13%, 56.00% 55.24%, 58.00% 56.27%, 60.00% 57.19%, 62.00% 58.01%, 64.00% 58.69%, 66.00% 59.25%, 68.00% 59.65%, 70.00% 59.90%, 72.00% 60.00%, 74.00% 59.94%, 76.00% 59.72%, 78.00% 59.35%, 80.00% 58.83%, 82.00% 58.17%, 84.00% 57.38%, 86.00% 56.48%, 88.00% 55.48%, 90.00% 54.38%, 92.00% 53.22%, 94.00% 52.01%, 96.00% 50.77%, 98.00% 49.51%, 100.00% 48.26%); }
+    60%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 41.34%, 2.00% 40.78%, 4.00% 40.37%, 6.00% 40.11%, 8.00% 40.00%, 10.00% 40.05%, 12.00% 40.26%, 14.00% 40.63%, 16.00% 41.14%, 18.00% 41.79%, 20.00% 42.57%, 22.00% 43.47%, 24.00% 44.47%, 26.00% 45.55%, 28.00% 46.71%, 30.00% 47.92%, 32.00% 49.16%, 34.00% 50.42%, 36.00% 51.67%, 38.00% 52.89%, 40.00% 54.07%, 42.00% 55.18%, 44.00% 56.21%, 46.00% 57.14%, 48.00% 57.97%, 50.00% 58.66%, 52.00% 59.22%, 54.00% 59.63%, 56.00% 59.89%, 58.00% 60.00%, 60.00% 59.95%, 62.00% 59.74%, 64.00% 59.37%, 66.00% 58.86%, 68.00% 58.21%, 70.00% 57.43%, 72.00% 56.53%, 74.00% 55.53%, 76.00% 54.45%, 78.00% 53.29%, 80.00% 52.08%, 82.00% 50.84%, 84.00% 49.58%, 86.00% 48.33%, 88.00% 47.11%, 90.00% 45.93%, 92.00% 44.82%, 94.00% 43.79%, 96.00% 42.86%, 98.00% 42.03%, 100.00% 41.34%);}  
+    80%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 40.60%, 2.00% 41.11%, 4.00% 41.75%, 6.00% 42.52%, 8.00% 43.41%, 10.00% 44.41%, 12.00% 45.49%, 14.00% 46.65%, 16.00% 47.85%, 18.00% 49.09%, 20.00% 50.35%, 22.00% 51.60%, 24.00% 52.82%, 26.00% 54.00%, 28.00% 55.12%, 30.00% 56.16%, 32.00% 57.10%, 34.00% 57.92%, 36.00% 58.63%, 38.00% 59.19%, 40.00% 59.61%, 42.00% 59.88%, 44.00% 60.00%, 46.00% 59.95%, 48.00% 59.75%, 50.00% 59.40%, 52.00% 58.89%, 54.00% 58.25%, 56.00% 57.48%, 58.00% 56.59%, 60.00% 55.59%, 62.00% 54.51%, 64.00% 53.35%, 66.00% 52.15%, 68.00% 50.91%, 70.00% 49.65%, 72.00% 48.40%, 74.00% 47.18%, 76.00% 46.00%, 78.00% 44.88%, 80.00% 43.84%, 82.00% 42.90%, 84.00% 42.08%, 86.00% 41.37%, 88.00% 40.81%, 90.00% 40.39%, 92.00% 40.12%, 94.00% 40.00%, 96.00% 40.05%, 98.00% 40.25%, 100.00% 40.60%);}
+    100%{clip-path: polygon(100% 100%, 0% 100% , 0.00% 59.85%, 2.00% 59.55%, 4.00% 59.11%, 6.00% 58.52%, 8.00% 57.79%, 10.00% 56.95%, 12.00% 55.99%, 14.00% 54.94%, 16.00% 53.81%, 18.00% 52.62%, 20.00% 51.39%, 22.00% 50.14%, 24.00% 48.89%, 26.00% 47.65%, 28.00% 46.45%, 30.00% 45.31%, 32.00% 44.24%, 34.00% 43.26%, 36.00% 42.38%, 38.00% 41.63%, 40.00% 41.01%, 42.00% 40.53%, 44.00% 40.20%, 46.00% 40.03%, 48.00% 40.01%, 50.00% 40.15%, 52.00% 40.45%, 54.00% 40.89%, 56.00% 41.48%, 58.00% 42.21%, 60.00% 43.05%, 62.00% 44.01%, 64.00% 45.06%, 66.00% 46.19%, 68.00% 47.38%, 70.00% 48.61%, 72.00% 49.86%, 74.00% 51.11%, 76.00% 52.35%, 78.00% 53.55%, 80.00% 54.69%, 82.00% 55.76%, 84.00% 56.74%, 86.00% 57.62%, 88.00% 58.37%, 90.00% 58.99%, 92.00% 59.47%, 94.00% 59.80%, 96.00% 59.97%, 98.00% 59.99%, 100.00% 59.85%);}
+  }
+
+.Box{
+    &__Info{
+        height: 30rem;
+        margin-top: 10rem;
+        position: relative;
+        &-Amz{
+            background-color: #2AAA8A;
+            @media screen and (max-width:$mb-1000) {
+                margin-top: 10rem;
+              }
+        }
+        &-Sno{
+            background-color: #DBF1FD; 
+            @media screen and (max-width:$mb-1100) {
+                margin-top: 10rem;
+              }
+        }
+        &-Sea{
+            background-color: 	#20b1b4;  
+        }
+    }
+    &__Title{
+        position: relative;
+        font-size: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        top: -12%;
+        @media screen and (max-width:$mb-1210) {
+            top: -15%;
+            font-size: 2rem;
+          }
+          @media screen and (max-width:$mb-900) {
+            font-size: 3rem;
+          }
+    }
+    &__Description{
+        font-size: 1.5rem;
+        font-style: italic;
+        text-align: center;
+        letter-spacing: .1rem;
+        padding: 0 2rem;
+        margin-top: -3rem;
+        @media screen and (max-width:$mb-1210) {
+            margin-top: -4.5rem;
+            font-size: 1.3rem;
+          }
+          @media screen and (max-width:$mb-1100) {
+            margin-top: -4.5rem;
+            font-size: 1.2rem;
+          }
+          @media screen and (max-width:$mb-900) {
+            font-size: 2rem;
+          }
+          @media screen and (max-width:$mb-700) {
+            font-size: 1.7rem
+          }
+          @media screen and (max-width:$mb-650) {
+            font-size: 1.5rem;
+          } 
+          @media screen and (max-width:$mb-600) {
+            font-size: 1.35rem;
+          } 
+    }
+    &__Ticket{
+        font-size: 2rem;
+        position: relative;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);   
+        padding: 1rem 4rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        @media screen and (max-width:$mb-1210) {
+            font-size: 1.5rem;
+          }
+          @media screen and (max-width:$mb-1100) {
+            margin-top: 0;
+          }
+          @media screen and (max-width:$mb-900) {
+            font-size: 2rem;
+          }
+          @media screen and (max-width:$mb-700) {
+            font-size: 1.7rem
+          }
+          @media screen and (max-width:$mb-650) {
+            font-size: 1.35rem;
+          } 
+
+        &-Amz{
+         background-image: linear-gradient(to right, #32CD32  , #50C878 ) ;
+         border: 2px solid black;
+        }
+        &-Sno{
+            border: 2px solid black;
+            background-image: linear-gradient(to right, #87CEEB , #dee3e5 );
+        }
+        &-Sea{
+            border: 2px solid black;
+            background-image: linear-gradient(to right, #40E0D0 ,#259FAF );
+        }
+    }
+  }
+
+  .Img{
+    &-Amz{
+    background-image: url(./../../img/Amz-Background.jpg);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    &-Sno{
+        background-image: url(./../../img/Sno-Back.jpg);
+        background-position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &-Sea{
+        background-image: url(./../../img/Sea-Background.jpg);
+        background-position: top;
+        background-size: cover;
+        
+    }
+  }
+
+  .Price{
+    margin-left: 1rem;
+    letter-spacing: .4rem;
+  }
